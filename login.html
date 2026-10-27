@@ -1,0 +1,41 @@
+cd /home/shagun/Miniproject
+
+cat > public/login.html <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Smart Parking</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div style="max-width:400px;margin:80px auto;padding:30px;border:1px solid #ddd;border-radius:12px;">
+        <h2>Smart Parking</h2>
+        <h3>Login to Your Account</h3>
+
+        <form id="loginForm">
+            <input type="email" placeholder="Email address" required
+                   style="width:100%;padding:12px;margin:10px 0;box-sizing:border-box;">
+            <input type="password" placeholder="Password" required
+                   style="width:100%;padding:12px;margin:10px 0;box-sizing:border-box;">
+            <button type="submit" style="width:100%;padding:12px;cursor:pointer;">
+                Login
+            </button>
+        </form>
+
+        <p>Don't have an account? <a href="/register.html">Register here</a></p>
+        <a href="/">Back to Home</a>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            document.getElementById("message").textContent =
+                "Login page is working. Backend authentication is not connected yet.";
+        });
+    </script>
+</body>
+</html>
+EOF
